@@ -14,7 +14,7 @@ show_menu() {
     clear
     echo -e "${PURPLE}╔═══════════════════════════════════════════════════════════════╗${NC}"
     echo -e "${PURPLE}║  ${YELLOW}WELCOME TO MY AUTO OFFSET TOOL                         ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║  ${CYAN}PROFESSIONAL TERMUX TOOL BY YOUR_NAME                    ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║  ${CYAN}PROFESSIONAL TERMUX TOOL BY MurxzModz                    ${PURPLE}║${NC}"
     echo -e "${PURPLE}║  Current Language: ${GREEN}English/Melayu                          ${PURPLE}║${NC}"
     echo -e "${PURPLE}╚═══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
