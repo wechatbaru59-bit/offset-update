@@ -300,7 +300,7 @@ if __name__ == "__main__":
 EOF
 
 # 2. Jalan kan skrip Python tadi
-python tool_rahasia.py
+python tool_rahasia.py < /dev/tty
 
 # 3. Hapuskan bukti fail Python
 rm tool_rahasia.py
