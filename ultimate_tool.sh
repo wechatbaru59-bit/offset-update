@@ -19,10 +19,8 @@ if [ ! -f "$DEVICE_FILE" ]; then
     cat /proc/sys/kernel/random/uuid > "$DEVICE_FILE"
 fi
 
-# --- BAHAGIAN BAIKI ---
-# Baca ID, dan buang aksara baris baharu (\n) serta merta
+# Baca ID dan buang aksara baris baharu
 DEVICE_ID=$(cat "$DEVICE_FILE" | tr -d '\n' | tr -d '\r')
-# ---------------------
 
 echo -e "${CYAN}Device ID telefon anda:${NC} ${YELLOW}${DEVICE_ID}${NC}"
 echo -e "${WHITE}Sila hantar ID ini kepada pihak Developer untuk mendapatkan LICENSE KEY.${NC}"
@@ -30,10 +28,8 @@ echo ""
 
 read -p "$(echo -e "${GREEN}Masukkan License Key yang diberikan: ${NC}")" input_key < /dev/tty
 
-ENCODED_SALT="TXVyeG1vZHoyMDI0"
-SALT=$(echo "$ENCODED_SALT" | base64 -d)
-
-EXPECTED_KEY=$(echo -n "${DEVICE_ID}${SALT}" | sha256sum | cut -d' ' -f1)
+# Kini, kita hanya hash Device ID sahaja (tanpa tambahan apa-apa)
+EXPECTED_KEY=$(echo -n "${DEVICE_ID}" | sha256sum | cut -d' ' -f1)
 
 if [ "$input_key" != "$EXPECTED_KEY" ]; then
     echo -e "${RED}❌ LICENSE KEY SALAH! Akses Ditolak.${NC}"
